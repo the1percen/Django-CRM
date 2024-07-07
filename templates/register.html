@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="col-md-6 offset-md-3">
+    <h1>Register</h1>
+
+    <form method="POST" action="{% url 'index' %}">
+    {% csrf_token %}
+    <form>
+        <br>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label" name="username">Username</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username" required>
+          <div id="emailHelp" class="form-text">This is your Display Name</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label" name="firstname">First Name</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="firstname" required>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label" name="lastname">Last Name</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="lastname" required>
+          </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label" name="email">Email</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="yourmail@gmail.com" name="email" required>
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label" name="password">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label" name="password">Confirm Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="cpassword" required>
+          </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+    </form>
+    </div>
+{% endblock content %}
